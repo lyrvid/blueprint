@@ -242,7 +242,7 @@ export class Handle extends AbstractPureComponent<IInternalHandleProps, IHandleS
 
         // "bottom" value seems to be consistently incorrect, so explicitly
         // calculate it using the window offset instead.
-        const handleOffset = vertical ? window.innerHeight - (handleRect.top + handleRect[sizeKey]) : handleRect.left;
+        const handleOffset = vertical ? window.innerHeight - (handleRect.top + handleRect[sizeKey]) : window.innerWidth - (handleRect.left + handleRect[sizeKey]);
 
         return { handleMidpoint: handleRect[sizeKey] / 2, handleOffset };
     }
